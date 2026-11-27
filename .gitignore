@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Environment variables
+.env
+server/.env
+.env.local
+
+# SQLite databases
+server/edith.db
+server/edith.db-shm
+server/edith.db-wal
+*.db
+
+# Temporary TTS audio files
+server/tmp/
+
+# OS & Logs
+.DS_Store
+*.log

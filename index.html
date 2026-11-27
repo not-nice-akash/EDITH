@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDITH Mail Bot — AI Email-to-Voice Call Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/simulator.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       STAGE 1: LANDING PAGE
+       ====================================================================== -->
+  <div id="view-landing" class="app-view">
+    <header class="landing-nav">
+      <div class="landing-nav-inner">
+        <a href="#top" class="brand" id="landing-brand">
+          <svg class="brand-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="#2563EB" />
+            <rect x="9" y="13" width="22" height="17" rx="6" fill="#FFFFFF" />
+            <line x1="20" y1="7" x2="20" y2="13" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+            <circle cx="20" cy="6.5" r="2.5" fill="#93C5FD" />
+            <circle cx="15" cy="21" r="2.2" fill="#2563EB" />
+            <circle cx="25" cy="21" r="2.2" fill="#2563EB" />
+            <path d="M16 25.5C17.2 26.8 22.8 26.8 24 25.5" stroke="#2563EB" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <span>EDITH Mail Bot</span>
+        </a>
+
+        <nav class="landing-links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+
+        <div class="input-row">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-landing-signin">Sign In</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="landing-container" id="top">
+      <section class="hero">
+        <div>
+          <div class="hero-eyebrow">
+            <span class="status-dot status-dot-success"></span>
+            AI Voice Briefings for Your Inbox
+          </div>
+          <h1 class="hero-title">
+            Your Emails, <span>Summarized by a Call</span>
+          </h1>
+          <p class="hero-subtitle">
+            Stop scrolling through hundreds of unread messages. EDITH Mail Bot reads your important emails and delivers crisp, natural AI voice briefings right to your phone at the exact times you choose.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary btn-lg" id="btn-get-started">
+              Get Started →
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg" id="btn-landing-demo-call">
+              Preview Voice Call
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Custom SVG Illustration: EDITH Robot + Mail & Provider Icons -->
+          <svg class="hero-svg" viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="210" cy="180" r="145" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2" stroke-dasharray="8 8" />
+            <circle cx="210" cy="180" r="105" fill="#DBEAFE" opacity="0.55" />
+
+            <!-- Floating Gmail Card -->
+            <g transform="translate(36, 68)">
+              <rect width="74" height="56" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" />
+              <path d="M18 39V20L37 32L56 20V39" stroke="#EA4335" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+
+            <!-- Floating IMAP Card -->
+            <g transform="translate(308, 72)">
+              <rect width="74" height="56" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" />
+              <rect x="19" y="16" width="36" height="24" rx="4" fill="#2563EB" />
+              <path d="M19 20L37 30L55 20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+
+            <!-- Floating Phone Call Card -->
+            <g transform="translate(48, 238)">
+              <rect width="84" height="54" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" />
+              <circle cx="27" cy="27" r="12" fill="#DCFCE7" />
+              <path d="M23 23C23 27.5 26.5 31 31 31L33 29L30 26L28.5 27.5C27.2 26.9 26.1 25.8 25.5 24.5L27 23L24 20L23 23Z" fill="#16A34A" />
+              <rect x="46" y="20" width="26" height="5" rx="2.5" fill="#0F172A" />
+              <rect x="46" y="29" width="18" height="4" rx="2" fill="#94A3B8" />
+            </g>
+
+            <!-- Floating Voice Wave Card -->
+            <g transform="translate(292, 236)">
+              <rect width="86" height="54" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" />
+              <rect x="20" y="22" width="5" height="10" rx="2.5" fill="#2563EB" />
+              <rect x="30" y="15" width="5" height="24" rx="2.5" fill="#2563EB" />
+              <rect x="40" y="19" width="5" height="16" rx="2.5" fill="#60A5FA" />
+              <rect x="50" y="12" width="5" height="30" rx="2.5" fill="#2563EB" />
+              <rect x="60" y="20" width="5" height="14" rx="2.5" fill="#60A5FA" />
+            </g>
+
+            <!-- Center EDITH Robot Mascot -->
+            <g transform="translate(132, 92)">
+              <line x1="78" y1="6" x2="78" y2="28" stroke="#2563EB" stroke-width="5" stroke-linecap="round" />
+              <circle cx="78" cy="6" r="8" fill="#60A5FA" stroke="#2563EB" stroke-width="3" />
+              <rect x="16" y="28" width="124" height="96" rx="28" fill="#2563EB" />
+              <rect x="30" y="44" width="96" height="58" rx="18" fill="#0F172A" />
+              <circle cx="58" cy="69" r="8" fill="#60A5FA" />
+              <circle cx="98" cy="69" r="8" fill="#60A5FA" />
+              <path d="M64 85C70 91 86 91 92 85" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" />
+              <!-- Robot Ears / Headset -->
+              <rect x="4" y="56" width="12" height="36" rx="6" fill="#1D4ED8" />
+              <rect x="140" y="56" width="12" height="36" rx="6" fill="#1D4ED8" />
+              <!-- Robot Body -->
+              <rect x="38" y="132" width="80" height="44" rx="16" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="3" />
+              <circle cx="78" cy="154" r="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5" />
+              <path d="M74 154L77 157L83 151" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 4 Feature Highlight Cards -->
+      <section id="features" class="features-grid" aria-label="Key Features">
+        <article class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Save Time</h3>
+          <p>Turn 30 minutes of morning inbox triage into a focused 2-minute phone call while you commute or grab coffee.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Stay Updated</h3>
+          <p>Never miss urgent exam notices, interview invites, or security alerts buried under promotional clutter.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Summaries</h3>
+          <p>Smart categorization groups your emails by priority and reads out clear, human-sounding action items.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Flexible Schedule</h3>
+          <p>Choose once-a-day briefings, regular hourly intervals, or custom time slots with quiet-hour windows.</p>
+        </article>
+      </section>
+
+      <!-- How It Works -->
+      <section id="how-it-works" class="how-section">
+        <div class="section-header">
+          <h2>How EDITH Mail Bot Works</h2>
+          <p>Go from cluttered inbox to calm voice briefings in under two minutes.</p>
+        </div>
+        <div class="steps-3col">
+          <div class="card">
+            <span class="step-pill">1</span>
+            <h3>Connect Your Inboxes</h3>
+            <p class="form-hint">Link Gmail or any IMAP account with read-only summary permissions.</p>
+          </div>
+          <div class="card">
+            <span class="step-pill">2</span>
+            <h3>Verify Your Phone &amp; Schedule</h3>
+            <p class="form-hint">Confirm your mobile number via OTP and pick your ideal calling window and frequency.</p>
+          </div>
+          <div class="card">
+            <span class="step-pill">3</span>
+            <h3>Answer Your Briefing</h3>
+            <p class="form-hint">EDITH calls you on schedule, reads key highlights, and sends a recap notification.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Anchor -->
+      <section id="pricing" class="how-section">
+        <div class="section-header">
+          <h2>Simple, Transparent Plans</h2>
+          <p>Start free with daily AI voice briefings. Upgrade anytime for multi-inbox support.</p>
+        </div>
+        <div class="steps-3col">
+          <div class="card">
+            <h3>Starter</h3>
+            <p class="stat-value">Free</p>
+            <p class="form-hint">1 email account • 1 call/day • Brief summaries</p>
+          </div>
+          <div class="card" style="border-color: var(--primary); box-shadow: var(--shadow-md);">
+            <span class="badge badge-primary">Most Popular</span>
+            <h3 style="margin-top: 0.5rem;">Pro</h3>
+            <p class="stat-value">$9/mo</p>
+            <p class="form-hint">Up to 5 email accounts • Custom schedules • Detailed briefings</p>
+          </div>
+          <div class="card">
+            <h3>Team</h3>
+            <p class="stat-value">$24/mo</p>
+            <p class="form-hint">Shared team inboxes • Priority alerts • Call transcripts</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ======================================================================
+       STAGES 2–7: ONBOARDING FLOW
+       ====================================================================== -->
+  <div id="view-onboarding" class="app-view hidden">
+    <div class="onboarding-wrapper">
+      <div class="onboarding-topbar">
+        <a href="#" class="brand" id="onboarding-home-link">
+          <svg class="brand-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="#2563EB" />
+            <rect x="9" y="13" width="22" height="17" rx="6" fill="#FFFFFF" />
+            <line x1="20" y1="7" x2="20" y2="13" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+            <circle cx="20" cy="6.5" r="2.5" fill="#93C5FD" />
+            <circle cx="15" cy="21" r="2.2" fill="#2563EB" />
+            <circle cx="25" cy="21" r="2.2" fill="#2563EB" />
+            <path d="M16 25.5C17.2 26.8 22.8 26.8 24 25.5" stroke="#2563EB" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <span>EDITH Mail Bot</span>
+        </a>
+        <button type="button" class="btn btn-ghost btn-sm" id="btn-onboarding-back-home">Back to Home</button>
+      </div>
+
+      <div id="onboarding-progress" class="progress-wrap hidden">
+        <div class="progress-meta">
+          <span id="onboarding-step-label">Step 1 of 5</span>
+          <span id="onboarding-step-pct">20%</span>
+        </div>
+        <div class="progress-track">
+          <div id="onboarding-progress-fill" class="progress-fill" style="width: 20%;"></div>
+        </div>
+      </div>
+
+      <main id="onboarding-card" class="onboarding-card" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       STAGES 8–10: AUTHENTICATED APP SHELL
+       ====================================================================== -->
+  <div id="view-dashboard" class="app-view hidden">
+    <div class="app-shell">
+      <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+      <aside id="app-sidebar" class="sidebar" aria-label="Main Navigation">
+        <div class="sidebar-header">
+          <a href="#" class="brand" id="sidebar-brand">
+            <svg class="brand-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <rect width="40" height="40" rx="10" fill="#2563EB" />
+              <rect x="9" y="13" width="22" height="17" rx="6" fill="#FFFFFF" />
+              <line x1="20" y1="7" x2="20" y2="13" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" />
+              <circle cx="20" cy="6.5" r="2.5" fill="#93C5FD" />
+              <circle cx="15" cy="21" r="2.2" fill="#2563EB" />
+              <circle cx="25" cy="21" r="2.2" fill="#2563EB" />
+              <path d="M16 25.5C17.2 26.8 22.8 26.8 24 25.5" stroke="#2563EB" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <span>EDITH Mail Bot</span>
+          </a>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button type="button" class="nav-item active" data-tab="dashboard">
+            <span>🏠</span><span>Dashboard</span>
+          </button>
+          <button type="button" class="nav-item" data-tab="schedule">
+            <span>📅</span><span>Call Schedule</span>
+          </button>
+          <button type="button" class="nav-item" data-tab="accounts">
+            <span>✉️</span><span>Email Accounts</span>
+          </button>
+          <button type="button" class="nav-item" data-tab="history">
+            <span>📞</span><span>Call History</span>
+          </button>
+          <button type="button" class="nav-item" data-tab="preferences">
+            <span>🎛️</span><span>Preferences</span>
+          </button>
+          <button type="button" class="nav-item" data-tab="settings">
+            <span>⚙️</span><span>Settings</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button type="button" class="test-call-btn" id="btn-launch-simulator">
+            <span>🎙️</span><span>Test Bot Call</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-block" id="btn-sidebar-real-call">
+            <span>📱</span><span>Preview Call UI</span>
+          </button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-signout">Sign Out</button>
+        </div>
+      </aside>
+
+      <div class="app-main">
+        <header class="mobile-header">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-mobile-menu" aria-label="Open menu">☰ Menu</button>
+          <span class="brand" style="font-size: 1rem;">EDITH Mail Bot</span>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-mobile-test-call">Test Call</button>
+        </header>
+
+        <main id="dashboard-content" class="main-content" aria-live="polite"></main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: CONNECT EMAIL ACCOUNT (Stages 5 & 9)
+       ====================================================================== -->
+  <div id="modal-connect-email" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="connect-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="connect-modal-title" style="font-size: 1.2rem; font-weight: 800;">Connect Email Account</h2>
+        <button type="button" class="modal-close" id="btn-close-connect-modal" aria-label="Close modal">×</button>
+      </div>
+      <div id="connect-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: DETAILED CALL SUMMARY (Stage 10 & Stage 16)
+       ====================================================================== -->
+  <div id="modal-call-summary" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="summary-modal-title">
+    <div class="modal-card modal-card-wide">
+      <div class="modal-header">
+        <div>
+          <h2 id="summary-modal-title" style="font-size: 1.2rem; font-weight: 800;">Call Summary</h2>
+          <p id="summary-modal-subtitle" class="form-hint"></p>
+        </div>
+        <button type="button" class="modal-close" id="btn-close-summary-modal" aria-label="Close modal">×</button>
+      </div>
+      <div id="summary-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       STAGES 11–16: MOBILE CALL SIMULATOR MODAL
+       ====================================================================== -->
+  <div id="modal-simulator" class="sim-overlay hidden" role="dialog" aria-modal="true" aria-label="EDITH Mobile Call Simulator">
+    <div class="phone-frame">
+      <div class="phone-statusbar">
+        <span id="sim-clock-status">09:00</span>
+        <div class="phone-notch"><div class="phone-camera"></div></div>
+        <span>5G 🔋</span>
+      </div>
+      <button type="button" class="sim-close-x" id="btn-close-simulator" aria-label="Close call simulator">×</button>
+      <div id="sim-screen" class="phone-screen"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Application Scripts (classic defer order works on both http:// and file://) -->
+  <script defer src="js/state.js"></script>
+  <script defer src="js/api.js"></script>
+  <script defer src="js/app.js"></script>
+  <script defer src="js/onboarding.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script defer src="js/simulator.js"></script>
+</body>
+</html>
